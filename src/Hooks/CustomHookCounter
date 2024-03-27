@@ -1,0 +1,25 @@
+import { useState } from "react";
+
+export const CustomHookCounter = (initialValue = 10 ) => {
+
+    const [counter, setCounter] = useState(initialValue);
+
+    const counterMas = (value = 1 ) => setCounter(counter + value);
+
+    const counterMenos = (value  = 1) =>  {
+       // if(counter == 0) return;
+        setCounter(counter - value);
+    } 
+    const counterReset = () => setCounter(initialValue );
+
+
+    return {
+        counter,
+        counterMas,
+        counterMenos,
+        counterReset
+
+    } 
+
+
+}
